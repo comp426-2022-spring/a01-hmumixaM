@@ -1,0 +1,23 @@
+{
+  "name": "a01-hmumixam",
+  "version": "1.0.0",
+  "description": "[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6764082&assignment_repo_type=AssignmentRepo) # a01 Node",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hmumixaM: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@github.com/comp426-2022-spring/a01-hmumixaM.git"
+  },
+  "author": "Yang Hu",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a01-hmumixaM/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a01-hmumixaM#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
