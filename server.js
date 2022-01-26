@@ -2,12 +2,14 @@ const http = require('http');
 const fs = require('fs');
 
 const args = require('minimist')(process.argv.slice(2));
-let port = args['port'];
-if (port === undefined || port <= 0 || port >= 65536) {
-    port = 3000;
+let port;
+if (args['port'] === undefined) {
+  port = 3000;
+} else {
+  port = args['port'];
 }
 
-http.createServer((request, response) => {
+const server = http.createServer((request, response) => {
   fs.readFile('./www/index.html', 'utf8' , (err, data) => {
     if (err) {
       console.error(err);
@@ -16,6 +18,7 @@ http.createServer((request, response) => {
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end(data, 'utf-8');
   });
-}).listen(port);
+});
+server.listen(port);
 
 console.log(`Server listening on port ${port}`);
