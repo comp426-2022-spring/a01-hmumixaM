@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const args = require('minimist')(process.argv.slice(2));
 let port = args['port'];
-if (port === undefined) {
+if (port === undefined || port <= 0 || port >= 65536) {
     port = 3000;
 }
 
