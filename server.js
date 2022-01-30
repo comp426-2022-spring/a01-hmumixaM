@@ -9,16 +9,20 @@ if (typeof args['port'] != 'number') {
   port = args['port'];
 }
 
-const server = http.createServer((request, response) => {
-  fs.readFile('./www/index.html', 'utf8' , (err, data) => {
+fs.readFile('./www/index.html', 'utf8', (err, data) =>{
     if (err) {
-      console.error(err);
-      process.exit(1);
+        console.error(err)
+        return
+        process.exit(1)
     }
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.end(data, 'utf-8');
+ 
+  const server = http.createServer((req, res) => {
+      res.statusCode = 200
+      res.setHeader('Content-Type', 'text/html')
+      res.end(data)
   });
-});
-server.listen(port);
 
-console.log(`Server listening on port ${port}`);
+  server.listen(port, ()=> {
+      console.log(`Server listening on port ${port}`)
+  });
+})
